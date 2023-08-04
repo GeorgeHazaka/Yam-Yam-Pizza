@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <title>YamYam Pizzera</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md sticky-top navbar-light" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold me-4" href="#">YamYam</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          id="nav-button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Book a table</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+      <div class="container-fluid">
+        <div class="container shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+          <p class="display-6">
+            <span class="fw-bold">Location:</span> Streetgatan 111, Norrkoping
+          </p>
+          <p class="display-6">
+            <span class="fw-bold">Call us:</span> 011 222 333
+          </p>
+          <p class="display-6">
+            <span class="fw-bold">Email:</span> yamyam@gmail.com
+          </p>
+          <div class="">
+            <div class="row text-center mt-4">
+              <div class="col-3 display-6">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Visit our Facebook page (opens in a new tab)"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </div>
+              <div class="col-3 display-6">
+                <a
+                  href="https://www.twitter.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Visit our Twitter page (opens in a new tab)"
+                  ><i class="fa-brands fa-square-twitter"></i
+                ></a>
+              </div>
+              <div class="col-3 display-6">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Visit our Youtube page (opens in a new tab)"
+                  ><i class="fa-brands fa-youtube"></i
+                ></a>
+              </div>
+              <div class="col-3 display-6">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Visit our Instagram page (opens in a new tab)"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap script  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

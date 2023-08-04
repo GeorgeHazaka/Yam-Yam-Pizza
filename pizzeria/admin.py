@@ -6,7 +6,10 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
 
-    list_display = ('username', 'email', 'persons_number', 'table_number', 'booked_on')
+    list_display = (
+        'username', 'slug', 'email',
+        'persons_number', 'table_number', 'booked_on'
+    )
     search_fields = ['username', 'persons_number', 'table_number']
     prepopulated_fields = {'slug': ('username',)}
     list_filter = ('booked_on', 'persons_number')
@@ -15,7 +18,7 @@ class BookingAdmin(SummernoteModelAdmin):
 @admin.register(Pizza)
 class PizzaAdmin(SummernoteModelAdmin):
 
-    list_display = ('name', 'price')
+    list_display = ('name', 'slug', 'price')
     search_fields = ['name', 'price']
     prepopulated_fields = {'slug': ('name',)}
     list_filter = ('price',)
