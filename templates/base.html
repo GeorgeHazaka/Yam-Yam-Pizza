@@ -25,9 +25,11 @@
     <title>YamYam Pizzera</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md sticky-top navbar-light" id="navbar">
+    <!-- Nav -->
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold me-4" href="#">YamYam</a>
+        <a class="navbar-brand fw-bold me-4" href="{% url 'home' %}">YamYam</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -43,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
             <li class="nav-item">
-              <a class="nav-link" href="#">Menu</a>
+              <a class="nav-link" href="{% url 'menu' %}">Menu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Book a table</a>
@@ -57,6 +59,8 @@
     </nav>
 
     {% block content %} {% endblock %}
+
+    <!-- Footer -->
 
     <footer>
       <div class="container-fluid">

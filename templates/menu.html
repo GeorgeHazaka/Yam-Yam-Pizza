@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="text-center">
+  <h1 class="mt-5 mb-4 display-3">Pizza Menu</h1>
+  <h2>Deliciously Irresistible Pizzas: A Slice of Heaven!</h2>
+</div>
+<div class="container">
+  <div class="row my-5 align-items-center justify-content-center">
+    {% for pizza in pizza_list %}
+    <div class="col-8 col-lg-4 col-xl-3">
+      <div class="card mb-4" id="pizza-card">
+        <div class="card-body text-center py-4">
+          <h3 class="mb-3">{{ pizza.name }}</h3>
+          {% if "placeholder" in pizza.featured_image.url %}
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQmk1DR0p1Wi1QMLed3bcooFDFKwxNG9uMHFhoxDfsIPtMXCJFHag-idBCm4G5BRcTFY&usqp=CAU"
+            alt=""
+            class="card-img"
+          />
+          {% else %}
+          <img src="{{ pizza.featured_image.url }}" alt="" class="card-img" />
+          {% endif %}
+          <p class="mt-4 fw-bold">{{ pizza.price }} SEK</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation" id="page-nav">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
+          >&laquo; PREV
+        </a>
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+          NEXT &raquo;</a
+        >
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-3 right">
+      <div class="row">
+        {% for pizza in pizza_list %} -->
+<!-- <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="image-container">
+                {% if "placeholder" in post.featured_image.url %}
+                <img
+                  src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                  alt=""
+                  class="card-img-top"
+                />
+                {% else %}
+                <img
+                  src="{{ pizza.featured_image.url }}"
+                  alt=""
+                  class="card-img-top"
+                />
+                {% endif %}
+                <div class="image-flash">
+                  <p class="author">Author: {{ pizza.name }}</p>
+                </div>
+              </div>
+                <h2 class="card-title">{{ pizza.price }}</h2>
+                <p class="card-text">{{ post.excerpt }}</p>
+              </a>
+              <hr />
+              <p class="card-text text-muted h6">
+                {{ pizza.created_on }} <i class="far fa-heart"></i>{{
+                post.number_of_likes }}
+              </p>
+            </div>
+          </div>
+        </div> -->
+<!-- {% if forloop.counter|divisibleby:2 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}</div>
+    </div>
+  </div>
+</div> -->
+
+{% endblock %}

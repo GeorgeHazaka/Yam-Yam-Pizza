@@ -8,6 +8,7 @@ class Pizza(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     price = models.IntegerField()
     featured_image = CloudinaryField('image', default='placeholder')
+    ingredients = models.TextField()
 
     class Meta:
         ordering = ['price']
