@@ -86,6 +86,15 @@ h2 {
     width: 50%;
 }
 
+/* Not working */
 #container-login {
     color: blue;
+}
+
+#booking-form-container {
+    color: rgb(250, 177, 19);
+}
+
+#booking-form-container .card {
+    background-color: rgb(1, 36, 30);
 }

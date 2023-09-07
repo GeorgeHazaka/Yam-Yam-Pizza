@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import FormView
-# maybe FormView not needed
+from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Pizza, Booking
 from .forms import BookTableForm
+from django.contrib.auth.decorators import login_required
 
 
 class Home(generic.ListView):
@@ -34,25 +35,62 @@ class PizzaDetails(View):
         )
 
 
-# class BookTable(FormView):
+class BookTable(LoginRequiredMixin, CreateView):
+ 
+    def get(self, request, *args, **kwargs):
 
-#     def post(self, request, *args, **kwargs):
+        return render(
+            request,
+            'book_table.html',
+            {
+                "booked": False,
+                "book_table_form": BookTableForm(),
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        book_table_form = BookTableForm(data=request.POST)
+
+        if book_table_form.is_valid():
+            book_table_form.instance.username = request.user.username
+            book_table = book_table_form.save(commit=False)
+            book_table.save()
+        else:
+            book_table_form = BookTableForm()
+
+        return render(
+            request,
+            'book_table.html',
+            {
+                "booked": True,
+                "book_table_form": BookTableForm(),
+            },
+        )
+
+# class BookTable(CreateView):
+
+#     def get(self, request, *args, **kwargs):
 #         queryset = Booking.objects
 #         booking = get_object_or_404(queryset, slug=slug)
-#         template_name = 'book_table.html'
-#         form_class = BookTableForm
-#         book_table_form = BookTableForm(data=request.POST)
 
 #         return render(
 #             request,
 #             'book_table.html',
 #             {
 #                 "book_table_form": BookTableForm(),
-#             }
+#             },
 #         )
 
-# def book_table(request):
+#     def post(self, request, *args, **kwargs):
+#         queryset = Booking.objects
+#         booking = get_object_or_404(queryset, slug=slug)
+#         book_table_form = BookTableForm()
 
-#     context = {}
-
-#     return render(request, 'Pizzeria/book_table.html', context)
+#         return render(
+#             request,
+#             'book_table.html',
+#             {
+#                 "book_table_form": BookTableForm(),
+#             },
+#         )

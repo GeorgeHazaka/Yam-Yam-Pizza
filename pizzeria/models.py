@@ -28,8 +28,8 @@ AMOUNT_OF_TABLES = (
 
 
 class Booking(models.Model):
-    username = models.CharField(max_length=200, unique=True)
-    slug = models.CharField(max_length=200, unique=True)
+    username = models.CharField(max_length=200)
+    slug = models.CharField(max_length=200)
     email = models.EmailField()
     persons_number = models.IntegerField(choices=AMOUNT_OF_PERSONS, default=1)
     table_number = models.IntegerField(choices=AMOUNT_OF_TABLES)

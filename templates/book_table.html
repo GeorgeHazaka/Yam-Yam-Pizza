@@ -1,3 +1,23 @@
 {% extends "base.html" %} {% block content %}
-<h1>Hello</h1>
+
+{% load crispy_forms_tags %}
+
+
+<div class="container" id="booking-form-container">
+    <div class="row justify-content-center">
+        <div class="col-md-2 card mb-4 mt-3 shadow-lg">
+            <div class="card-body">
+                <h2>Book a table:</h2>
+
+                <form action="" method="POST">
+                    {{ book_table_form | crispy }}
+                    {% csrf_token %}
+                    <input type="submit">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
