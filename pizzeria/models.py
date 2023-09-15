@@ -31,11 +31,11 @@ class Booking(models.Model):
     username = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
     email = models.EmailField()
-    persons_number = models.IntegerField(choices=AMOUNT_OF_PERSONS, default=1)
+    number_of_persons = models.IntegerField(
+        choices=AMOUNT_OF_PERSONS, default=1)
     table_number = models.IntegerField(choices=AMOUNT_OF_TABLES)
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
-    booked_on = models.DateTimeField(null=True)
 
     class Meta:
         ordering = ['date']

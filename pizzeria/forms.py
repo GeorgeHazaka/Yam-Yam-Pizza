@@ -1,12 +1,11 @@
 from django import forms
 from .models import Booking
-# from django.contrib.admin.widgets import AdminDateWidget, AdminTimeWidget, AdminSplitDateTime
 
 
 class BookTableForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ('username', 'email', 'persons_number',
+        fields = ('username', 'email', 'number_of_persons',
                   'table_number', 'date', 'time')
         widgets = {
             'date': forms.DateInput(

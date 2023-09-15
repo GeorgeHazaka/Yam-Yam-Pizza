@@ -9,11 +9,11 @@ class BookingAdmin(SummernoteModelAdmin):
     summernote_fields = ('ingredients')
     list_display = (
         'username', 'slug', 'email',
-        'persons_number', 'table_number', 'date', 'time'
+        'number_of_persons', 'table_number', 'date', 'time'
     )
-    search_fields = ['username', 'persons_number', 'table_number']
+    search_fields = ['username', 'number_of_persons', 'table_number']
     prepopulated_fields = {'slug': ('username',)}
-    list_filter = ('date', 'time', 'persons_number')
+    list_filter = ('date', 'time', 'number_of_persons')
 
 
 @admin.register(Pizza)

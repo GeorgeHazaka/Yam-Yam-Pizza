@@ -24,6 +24,18 @@ body {
     color: rgb(1, 36, 30);
 }
 
+#navbar a:hover {
+    color: rgb(185, 167, 133);
+}
+
+#navbar .container-fluid button {
+    border: 2px solid rgb(1, 36, 30);
+}
+
+#navbar .container-fluid button:hover {
+    border-color: rgb(185, 167, 133);
+}
+
 h1 {
     font-family: 'Dancing Script', cursive;
     color: rgb(255, 153, 0);
@@ -33,13 +45,13 @@ p {
     color: rgb(255, 153, 0);
 }
 
-footer .container-fluid {
+#footer .container-fluid {
     background-color: rgb(250, 177, 19);
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-footer .container-sm {
+#footer .container-sm {
     background-color: rgb(250, 177, 19);
     width: 70%;
     height: 80%;
@@ -47,9 +59,13 @@ footer .container-sm {
     margin-bottom: 30px;
 }
 
-footer .container-sm p,
-footer .container-sm a {
+#footer .container-sm p,
+#footer .container-sm a {
     color: rgb(1, 36, 30);
+}
+
+#footer .container-sm a:hover {
+    color: rgb(185, 167, 133);
 }
 
 /* Menu */
@@ -97,4 +113,107 @@ h2 {
 
 #booking-form-container .card {
     background-color: rgb(1, 36, 30);
+}
+
+#booking-form-container form button {
+    background-color: rgb(250, 177, 19);
+    border: 2px solid rgb(1, 36, 30);
+}
+
+#booking-form-container form button:hover {
+    background-color: rgb(1, 36, 30);
+    border: 2px solid rgb(250, 177, 19);
+    color: rgb(250, 177, 19);
+}
+
+@media screen and (max-width: 900px) {
+
+    #footer p {
+            font-size: 30px;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+
+    #home-paragraph {
+        font-size: 30px;
+    }
+
+    #home-paragraph span {
+        font-size: 40px;
+    }
+
+    #footer p {
+        font-size: 25px;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+
+    #footer p {
+            font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    #home-paragraph {
+        font-size: 25px;
+    }
+
+    #home-paragraph span {
+        font-size: 35px;
+    }
+
+    #footer p {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+
+    #home-paragraph {
+        font-size: 20px;
+    }
+
+    #home-paragraph span {
+        font-size: 30px;
+    }
+
+    #footer p {
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+
+    #home-paragraph span {
+        font-size: 25px;
+    }
+
+    #footer p {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 362px) {
+
+    #home-paragraph {
+        font-size: 16px;
+    }
+
+    #home-paragraph span {
+        font-size: 20px;
+    }
+
+    #footer p {
+        font-size: 10px;
+    }
+
 }
