@@ -33,11 +33,12 @@ class Booking(models.Model):
     email = models.EmailField()
     persons_number = models.IntegerField(choices=AMOUNT_OF_PERSONS, default=1)
     table_number = models.IntegerField(choices=AMOUNT_OF_TABLES)
-    booked_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
+    booked_on = models.DateTimeField(null=True)
 
     class Meta:
-        ordering = ['booked_on']
+        ordering = ['date']
 
     def __str__(self):
         return self.username

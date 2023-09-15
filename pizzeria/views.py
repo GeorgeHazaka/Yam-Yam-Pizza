@@ -4,7 +4,6 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Pizza, Booking
 from .forms import BookTableForm
-from django.contrib.auth.decorators import login_required
 
 
 class Home(generic.ListView):
