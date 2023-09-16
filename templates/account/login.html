@@ -7,31 +7,28 @@
 
 {% block content %}
 
-<div class="container" id="container-login">
+<div class="container" id="login-container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h2>{% trans "Sign In" %}</h2>
-            <p>
-                {% blocktrans %}Welcome back to Yam Yam Pizzeria.
-                To book a table, please log in. If you have not created
-                an account yet, then
-                <a class="link" href="{{ signup_url }}">sign up</a>.
-                {% endblocktrans %}
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-8 card my-3 offset-md-2 my-4 shadow-lg">
+            <div class="card-body">
+                <h2 class="display-4 fw-bold">{% trans "Sign In" %}</h2>
+                <p class="display-6">
+                    {% blocktrans %}Welcome back to Yam Yam Pizzeria.
+                    To book a table, please log in. If you have not created
+                    an account yet, then
+                    <a class="link" href="{{ signup_url }}">sign up</a>.
+                    {% endblocktrans %}
+                </p>
 
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
-                {% endif %}
-                <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
-            </form>
-
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                    {% endif %}
+                    <button class="btn" type="submit">{% trans "Sign In" %}</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

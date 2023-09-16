@@ -1,19 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* body {
-    background: url(../images/pizza.jpg) no-repeat center center;
-    background-size: cover;
-} */
-
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+/* Body */
 
 body {
     background-color: rgb(1, 36, 30);
 }
+
+/* Navbar */
 
 #navbar {
     background-color: rgb(255, 153, 0);
@@ -36,6 +29,8 @@ body {
     border-color: rgb(185, 167, 133);
 }
 
+/* Home */
+
 h1 {
     font-family: 'Dancing Script', cursive;
     color: rgb(255, 153, 0);
@@ -44,6 +39,8 @@ h1 {
 p {
     color: rgb(255, 153, 0);
 }
+
+/* Footer */
 
 #footer .container-fluid {
     background-color: rgb(250, 177, 19);
@@ -102,10 +99,29 @@ h2 {
     width: 50%;
 }
 
-/* Not working */
-#container-login {
-    color: blue;
+/* Login */
+
+#login-container .card {
+    background-color: rgb(1, 36, 30);
 }
+
+#login-container form {
+    font-size: 30px;
+}
+
+#login-container form button {
+    background-color: rgb(250, 177, 19);
+    border: 2px solid rgb(1, 36, 30);
+    font-size: 20px;
+}
+
+#login-container form button:hover {
+    background-color: rgb(1, 36, 30);
+    border: 2px solid rgb(250, 177, 19);
+    color: rgb(250, 177, 19);
+}
+
+/* Book a table */
 
 #booking-form-container {
     color: rgb(250, 177, 19);
@@ -115,9 +131,20 @@ h2 {
     background-color: rgb(1, 36, 30);
 }
 
+#booking-form-container .card form {
+    font-size: 24px;
+}
+
+#booking-form-container .card form input,
+#booking-form-container .card form select {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
 #booking-form-container form button {
     background-color: rgb(250, 177, 19);
     border: 2px solid rgb(1, 36, 30);
+    font-size: 20px;
 }
 
 #booking-form-container form button:hover {
@@ -126,6 +153,10 @@ h2 {
     color: rgb(250, 177, 19);
 }
 
+/* Media queries */
+
+/* For screens size from 900px wide and down */
+
 @media screen and (max-width: 900px) {
 
     #footer p {
@@ -133,6 +164,8 @@ h2 {
     }
 
 }
+
+/* For screens size from 780px wide and down */
 
 @media screen and (max-width: 780px) {
 
@@ -150,6 +183,8 @@ h2 {
 
 }
 
+/* For screens size from 660px wide and down */
+
 @media screen and (max-width: 660px) {
 
     #footer p {
@@ -157,6 +192,8 @@ h2 {
     }
 
 }
+
+/* For screens size from 550px wide and down */
 
 @media screen and (max-width: 550px) {
 
@@ -174,6 +211,8 @@ h2 {
 
 }
 
+/* For screens size from 460px wide and down */
+
 @media screen and (max-width: 460px) {
 
     #home-paragraph {
@@ -190,6 +229,8 @@ h2 {
 
 }
 
+/* For screens size from 390px wide and down */
+
 @media screen and (max-width: 390px) {
 
     #home-paragraph span {
@@ -201,6 +242,8 @@ h2 {
     }
 
 }
+
+/* For screens size from 362px wide and down */
 
 @media screen and (max-width: 362px) {
 
