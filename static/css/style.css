@@ -109,6 +109,10 @@ h2 {
     font-size: 30px;
 }
 
+#login-container form label[for=id_password] {
+    margin-right: 9px;
+}
+
 #login-container form button {
     background-color: rgb(250, 177, 19);
     border: 2px solid rgb(1, 36, 30);
@@ -116,6 +120,32 @@ h2 {
 }
 
 #login-container form button:hover {
+    background-color: rgb(1, 36, 30);
+    border: 2px solid rgb(250, 177, 19);
+    color: rgb(250, 177, 19);
+}
+
+/* Sign-up */
+
+#signup-container .card {
+    background-color: rgb(1, 36, 30);
+}
+
+#signup-container form {
+    font-size: 30px;
+}
+
+#signup-container form label {
+    display: block;
+}
+
+#signup-container form button {
+    background-color: rgb(250, 177, 19);
+    border: 2px solid rgb(1, 36, 30);
+    font-size: 20px;
+}
+
+#signup-container form button:hover {
     background-color: rgb(1, 36, 30);
     border: 2px solid rgb(250, 177, 19);
     color: rgb(250, 177, 19);
@@ -163,6 +193,11 @@ h2 {
             font-size: 30px;
     }
 
+    #login-container label[for=id_login],
+    #login-container label[for=id_password]{
+        display: block;
+    }
+
 }
 
 /* For screens size from 780px wide and down */
@@ -187,8 +222,8 @@ h2 {
 
 @media screen and (max-width: 660px) {
 
-    #footer p {
-            font-size: 20px;
+    #footer .container-sm {
+        width: 90%;
     }
 
 }
@@ -206,7 +241,17 @@ h2 {
     }
 
     #footer p {
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    #login-container .card-body p,
+    #login-container .card-body label {
+        font-size: 24px;
+    }
+
+    #signup-container .card-body p,
+    #signup-container .card-body label {
+        font-size: 24px;
     }
 
 }
@@ -223,8 +268,12 @@ h2 {
         font-size: 30px;
     }
 
+    #footer .container-sm {
+        width: 96%;
+    }
+
     #footer p {
-        font-size: 13px;
+        font-size: 18px;
     }
 
 }
@@ -238,7 +287,11 @@ h2 {
     }
 
     #footer p {
-        font-size: 12px;
+        font-size: 15px;
+    }
+
+    #booking-form-container .card-body form label {
+        font-size: 20px;
     }
 
 }
@@ -255,8 +308,18 @@ h2 {
         font-size: 20px;
     }
 
-    #footer p {
-        font-size: 10px;
+    #footer .container-sm {
+        width: 98%;
+    }
+
+    #login-container .card-body p,
+    #login-container .card-body label {
+        font-size: 20px;
+    }
+
+    #signup-container .card-body p,
+    #signup-container .card-body label {
+        font-size: 20px;
     }
 
 }
