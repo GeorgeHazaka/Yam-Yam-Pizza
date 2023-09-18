@@ -38,14 +38,26 @@ class BookTable(LoginRequiredMixin, CreateView):
  
     def get(self, request, *args, **kwargs):
 
-        return render(
-            request,
-            'book_table.html',
-            {
-                "booked": False,
-                "book_table_form": BookTableForm(),
-            },
-        )
+        has_booking = Booking.objects.filter(username=request.user.username)
+
+        if has_booking:
+            return render(
+                request,
+                'booking_submitted.html',
+                {
+                    'booking': has_booking,
+                }
+            )
+
+        else:
+            return render(
+                request,
+                'book_table.html',
+                {
+                    "booked": False,
+                    "book_table_form": BookTableForm(),
+                },
+            )
 
     def post(self, request, *args, **kwargs):
 
@@ -67,29 +79,9 @@ class BookTable(LoginRequiredMixin, CreateView):
             },
         )
 
-# class BookTable(CreateView):
 
-#     def get(self, request, *args, **kwargs):
-#         queryset = Booking.objects
-#         booking = get_object_or_404(queryset, slug=slug)
-
-#         return render(
-#             request,
-#             'book_table.html',
-#             {
-#                 "book_table_form": BookTableForm(),
-#             },
-#         )
-
-#     def post(self, request, *args, **kwargs):
-#         queryset = Booking.objects
-#         booking = get_object_or_404(queryset, slug=slug)
-#         book_table_form = BookTableForm()
-
-#         return render(
-#             request,
-#             'book_table.html',
-#             {
-#                 "book_table_form": BookTableForm(),
-#             },
-#         )
+# def view_profile(request):
+#     booking_submitted = Booking.objects.filter(
+#         user=request.user).first().date is not None
+#     context = {'booking_submitted': booking_submitted}
+#     return render(request, 'booking_submitted.html', context)

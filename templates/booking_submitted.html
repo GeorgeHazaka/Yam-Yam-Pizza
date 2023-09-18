@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container" id="has-booking-container">
+    <div class="row">
+        <div class="col-md-8 col-xl-6 card my-4 offset-md-2 offset-xl-3 shadow-lg">
+            <div class="card-body">
+                <p>{{ booking.username }}</p>
+                {% for b in booking %}
+                <p>{{ b.username }}, you have a booking at {{ b.date }} {{b.date}}</p>
+                <p>You have booked a table for {{ b.number_of_persons }} persons</p>
+                <p>Your table number is {{ b.table_number }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

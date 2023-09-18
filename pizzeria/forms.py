@@ -5,7 +5,7 @@ from .models import Booking
 class BookTableForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ('username', 'email', 'number_of_persons',
+        fields = ('email', 'number_of_persons',
                   'table_number', 'date', 'time')
         widgets = {
             'date': forms.DateInput(
