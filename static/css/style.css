@@ -29,6 +29,11 @@ body {
     border-color: rgb(185, 167, 133);
 }
 
+#navbar #username {
+    position: absolute;
+    right: 30px;
+}
+
 /* Home */
 
 h1 {
@@ -151,7 +156,7 @@ h2 {
     color: rgb(250, 177, 19);
 }
 
-/* Book a table */
+/* Book a table (Not logged in) */
 
 #booking-form-container {
     color: rgb(250, 177, 19);
@@ -183,7 +188,25 @@ h2 {
     color: rgb(250, 177, 19);
 }
 
+/* Book a table (Logged in) */
+
+#has-booking-container .card {
+    background-color: rgb(1, 36, 30);
+    font-size: 24px;
+}
+
 /* Media queries */
+
+/* For screens size from 991px wide and down */
+
+@media screen and (max-width: 991px) {
+
+
+    #navbar #username {
+        right: 50px;
+    }
+
+}
 
 /* For screens size from 900px wide and down */
 
@@ -226,6 +249,10 @@ h2 {
         width: 90%;
     }
 
+    #has-booking-container .card {
+        font-size: 20px;
+    }
+
 }
 
 /* For screens size from 550px wide and down */
@@ -254,6 +281,10 @@ h2 {
         font-size: 24px;
     }
 
+    #has-booking-container .card {
+        font-size: 18px;
+    }
+
 }
 
 /* For screens size from 460px wide and down */
@@ -276,6 +307,10 @@ h2 {
         font-size: 18px;
     }
 
+    #has-booking-container .card {
+        font-size: 15px;
+    }
+
 }
 
 /* For screens size from 390px wide and down */
@@ -292,6 +327,10 @@ h2 {
 
     #booking-form-container .card-body form label {
         font-size: 20px;
+    }
+
+    #has-booking-container .card {
+        font-size: 13px;
     }
 
 }
@@ -322,4 +361,7 @@ h2 {
         font-size: 20px;
     }
 
+     #has-booking-container .card {
+        font-size: 11px;
+    }
 }

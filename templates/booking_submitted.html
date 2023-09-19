@@ -4,13 +4,13 @@
 
 <div class="container" id="has-booking-container">
     <div class="row">
-        <div class="col-md-8 col-xl-6 card my-4 offset-md-2 offset-xl-3 shadow-lg">
+        <div class="col-md-10 col-lg-8 col-xl-6 card my-4 offset-md-1 offset-lg-2 offset-xl-3 shadow-lg">
             <div class="card-body">
-                <p>{{ booking.username }}</p>
                 {% for b in booking %}
-                <p>{{ b.username }}, you have a booking at {{ b.date }} {{b.date}}</p>
+                <p>Hi, you have a booking in {{ b.date }} {{b.time}}</p>
                 <p>You have booked a table for {{ b.number_of_persons }} persons</p>
-                <p>Your table number is {{ b.table_number }}</p>
+                <p>And your table number is {{ b.table_number }}</p>
+                <p>You want to book another table? click <a href="{% url 'book_table' %}">here</a></p>
                 {% endfor %}
             </div>
         </div>
