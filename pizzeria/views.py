@@ -29,7 +29,7 @@ class PizzaDetails(View):
             request,
             'pizza_details.html',
             {
-                "pizza": pizza,
+                'pizza': pizza,
             }
         )
 
@@ -54,8 +54,8 @@ class BookTable(LoginRequiredMixin, CreateView):
                 request,
                 'book_table.html',
                 {
-                    "booked": False,
-                    "book_table_form": BookTableForm(),
+                    'booked': False,
+                    'book_table_form': BookTableForm(),
                 },
             )
 
@@ -74,14 +74,41 @@ class BookTable(LoginRequiredMixin, CreateView):
             request,
             'book_table.html',
             {
-                "booked": True,
-                "book_table_form": BookTableForm(),
+                'booked': True,
+                'book_table_form': BookTableForm(),
             },
         )
 
 
-# def view_profile(request):
-#     booking_submitted = Booking.objects.filter(
-#         user=request.user).first().date is not None
-#     context = {'booking_submitted': booking_submitted}
-#     return render(request, 'booking_submitted.html', context)
+class FillTableForm(CreateView):
+ 
+    def get(self, request, *args, **kwargs):
+
+        return render(
+            request,
+            'book_table.html',
+            {
+                'booked': False,
+                'book_table_form': BookTableForm(),
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        book_table_form = BookTableForm(data=request.POST)
+
+        if book_table_form.is_valid():
+            book_table_form.instance.username = request.user.username
+            book_table = book_table_form.save(commit=False)
+            book_table.save()
+        else:
+            book_table_form = BookTableForm()
+
+        return render(
+            request,
+            'book_table.html',
+            {
+                'booked': True,
+                'book_table_form': BookTableForm(),
+            },
+        )

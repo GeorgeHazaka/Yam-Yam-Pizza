@@ -6,11 +6,14 @@
     <div class="row">
         <div class="col-md-10 col-lg-8 col-xl-6 card my-4 offset-md-1 offset-lg-2 offset-xl-3 shadow-lg">
             <div class="card-body">
+                <p class="h4">Hi, You want to book another table? click <a href="{% url 'fill_table_form' %}">here</a></p>
+                <p>------------------------------------</p>
                 {% for b in booking %}
-                <p>Hi, you have a booking in {{ b.date }} {{b.time}}</p>
+                <p>You have a booking in {{ b.date }} {{b.time}}</p>
                 <p>You have booked a table for {{ b.number_of_persons }} persons</p>
-                <p>And your table number is {{ b.table_number }}</p>
-                <p>You want to book another table? click <a href="{% url 'book_table' %}">here</a></p>
+                <p>Your table number is {{ b.table_number }}</p>
+                <p>To cancel this booking, click <a href="{% url 'book_table' %}">here</a></p>
+                <p>------------------------------------</p>
                 {% endfor %}
             </div>
         </div>
