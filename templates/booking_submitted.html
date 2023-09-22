@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<div class="container d-flex justify-content-center" id="book-another-table-container">
+    <div class="row">
+        <div class="mt-5">
+            <p class="h4">Hi, You want to book another table? Click <a href="{% url 'fill_table_form' %}">here</a></p>
+        </div>
+    </div>
+</div>
 <div class="container" id="has-booking-container">
     <div class="row">
-        <div class="col-md-10 col-lg-8 col-xl-6 card my-4 offset-md-1 offset-lg-2 offset-xl-3 shadow-lg">
+        {% for b in booking %}
+        <div class="col-md-10 col-lg-8 col-xl-6 col-xxl-4 card my-4 offset-md-1 offset-lg-2 offset-xl-0 shadow-lg">
             <div class="card-body">
-                <p class="h4">Hi, You want to book another table? click <a href="{% url 'fill_table_form' %}">here</a></p>
-                <p>------------------------------------</p>
-                {% for b in booking %}
                 <p>You have a booking in {{ b.date }} {{b.time}}</p>
                 <p>You have booked a table for {{ b.number_of_persons }} persons</p>
                 <p>Your table number is {{ b.table_number }}</p>
                 <p>To cancel this booking, click <a href="{% url 'book_table' %}">here</a></p>
                 <p>------------------------------------</p>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
