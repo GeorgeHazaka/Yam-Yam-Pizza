@@ -26,7 +26,8 @@ body {
 
 #navbar a:hover,
 #navbar #button-signout:hover {
-    color: rgb(185, 167, 133);
+    color: rgb(255, 153, 0);
+    background-color: rgb(1, 36, 30);
 }
 
 #navbar .container-fluid button {
@@ -34,12 +35,12 @@ body {
 }
 
 #navbar .container-fluid button:hover {
-    border-color: rgb(185, 167, 133);
+    border-color: wheat;
 }
 
 #navbar #username {
     position: absolute;
-    right: 30px;
+    right: 0;
 }
 
 /* Home */
@@ -118,6 +119,10 @@ h2 {
     background-color: rgb(1, 36, 30);
 }
 
+#login-container .card p a {
+    color: rgb(0 159 255);
+}
+
 #login-container form {
     font-size: 30px;
 }
@@ -138,10 +143,18 @@ h2 {
     color: rgb(250, 177, 19);
 }
 
+#login-container form ul li {
+    color: wheat;
+}
+
 /* Sign-up */
 
 #signup-container .card {
     background-color: rgb(1, 36, 30);
+}
+
+#signup-container .card p a {
+    color: rgb(0 159 255);
 }
 
 #signup-container form {
@@ -162,6 +175,10 @@ h2 {
     background-color: rgb(1, 36, 30);
     border: 2px solid rgb(250, 177, 19);
     color: rgb(250, 177, 19);
+}
+
+#signup-container form ul li {
+    color: wheat;
 }
 
 /* Book a table (Not logged in) */
@@ -211,7 +228,9 @@ h2 {
 
 
     #navbar #username {
-        right: 50px;
+        right: 65px;
+        padding-right: 9px;
+        padding-left: 9px;
     }
 
 }

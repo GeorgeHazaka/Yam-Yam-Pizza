@@ -4,6 +4,9 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Pizza, Booking
 from .forms import BookTableForm
+from django.contrib import messages
+from datetime import datetime, timedelta
+from django import forms
 
 
 class Home(generic.ListView):
@@ -35,6 +38,8 @@ class PizzaDetails(View):
 
 
 class BookTable(LoginRequiredMixin, CreateView):
+
+    
  
     def get(self, request, *args, **kwargs):
 
@@ -62,6 +67,23 @@ class BookTable(LoginRequiredMixin, CreateView):
     def post(self, request, *args, **kwargs):
 
         book_table_form = BookTableForm(data=request.POST)
+        if request.method == "POST":
+            table_number = request.POST['table_number']
+            date = book_table_form.instance.date
+            time = book_table_form.instance.time
+            print(date)
+            print(time)
+            if Booking.objects.filter(table_number=table_number).exists():
+                if Booking.objects.filter(date=date).exists():
+                    if Booking.objects.filter(time__lte=time, time__gte=time + timedelta(minutes=59)).exists():
+                        messages.error(request, "Table Already Booked")
+                        return render(
+                            request,
+                            'book_table.html',
+                            {
+                                'book_table_form': BookTableForm(),
+                            }
+                        )
 
         if book_table_form.is_valid():
             book_table_form.instance.username = request.user.username
@@ -95,7 +117,24 @@ class FillTableForm(CreateView):
 
     def post(self, request, *args, **kwargs):
 
+
         book_table_form = BookTableForm(data=request.POST)
+        if request.method == "POST":
+            table_number = request.POST['table_number']
+            date = book_table_form.instance.date
+            time = book_table_form.instance.time
+            print(date)
+            print(time)
+
+            if Booking.objects.filter(table_number=table_number).exists() and Booking.objects.filter(date=date).exists() and Booking.objects.filter(time__lte = time, time__gte = time + timedelta(minutes=59)).exists():
+                messages.error(request, "Table Already Booked")
+                return render(
+                    request,
+                    'book_table.html',
+                    {
+                        'book_table_form': BookTableForm(),
+                    }
+                )
 
         if book_table_form.is_valid():
             book_table_form.instance.username = request.user.username

@@ -50,48 +50,4 @@
   {% endif %}
 </div>
 
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 mt-3 right">
-      <div class="row">
-        {% for pizza in pizza_list %} -->
-<!-- <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="image-container">
-                {% if "placeholder" in post.featured_image.url %}
-                <img
-                  src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                  alt=""
-                  class="card-img-top"
-                />
-                {% else %}
-                <img
-                  src="{{ pizza.featured_image.url }}"
-                  alt=""
-                  class="card-img-top"
-                />
-                {% endif %}
-                <div class="image-flash">
-                  <p class="author">Author: {{ pizza.name }}</p>
-                </div>
-              </div>
-                <h2 class="card-title">{{ pizza.price }}</h2>
-                <p class="card-text">{{ post.excerpt }}</p>
-              </a>
-              <hr />
-              <p class="card-text text-muted h6">
-                {{ pizza.created_on }} <i class="far fa-heart"></i>{{
-                post.number_of_likes }}
-              </p>
-            </div>
-          </div>
-        </div> -->
-<!-- {% if forloop.counter|divisibleby:2 %}
-      </div>
-      <div class="row">{% endif %} {% endfor %}</div>
-    </div>
-  </div>
-</div> -->
-
 {% endblock %}
