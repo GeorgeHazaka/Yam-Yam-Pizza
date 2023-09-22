@@ -76,7 +76,7 @@ p {
 }
 
 #footer .container-sm a:hover {
-    color: rgb(185, 167, 133);
+    color: wheat;
 }
 
 /* Menu */
@@ -214,6 +214,11 @@ h2 {
 }
 
 /* Book a table (Logged in) */
+
+#book-another-table-container p a,
+#has-booking-container .card-body p a {
+    color: rgb(0 159 255);
+}
 
 #has-booking-container .card {
     background-color: rgb(1, 36, 30);
