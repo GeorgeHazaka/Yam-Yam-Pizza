@@ -1,21 +1,29 @@
-{% extends "base.html" %} {% block content %}
-<div class="row my-5 align-items-center justify-content-center">
-  <div class="col-12">
-    <div class="card mb-4" id="pizza-details-card">
-      <div class="card-body text-center py-4">
-        <h3 class="mb-3">{{ pizza.name }}</h3>
-        {% if "placeholder" in pizza.featured_image.url %}
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQmk1DR0p1Wi1QMLed3bcooFDFKwxNG9uMHFhoxDfsIPtMXCJFHag-idBCm4G5BRcTFY&usqp=CAU"
-          alt=""
-          class="card-img"
-        />
-        {% else %}
-        <img src="{{ pizza.featured_image.url }}" alt="" class="card-img" />
-        {% endif %}
-        <p class="mt-4 fw-bold">{{ pizza.ingredients | safe }}</p>
-      </div>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row my-5 align-items-center justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xxl-6">
+            <div class="card mb-4" id="pizza-details-card">
+                <div class="card-body text-center py-4">
+                    <h3 class="mb-3">{{ pizza.name }}</h3>
+
+                    {% if "placeholder" in pizza.featured_image.url %}
+                        <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQmk1DR0p1Wi1QMLed3bcooFDFKwxNG9uMHFhoxDfsIPtMXCJFHag-idBCm4G5BRcTFY&usqp=CAU"
+                        alt=""
+                        class="card-img"
+                        />
+
+                    {% else %}
+                        <img src="{{ pizza.featured_image.url }}" alt="" class="card-img" />
+                    {% endif %}
+
+                    <p class="mt-4 fw-bold">{{ pizza.ingredients | safe }}</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock %}

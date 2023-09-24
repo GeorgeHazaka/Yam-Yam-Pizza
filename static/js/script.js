@@ -20,7 +20,7 @@ buttonNav.addEventListener("click", function() {
         username.style.cssText = "margin-bottom: 0px;";
         clicked = false;
     }
-})
+});
 
 /**
  *  Dismisses the alert messages after 3 seconds
@@ -39,7 +39,7 @@ buttonForm.addEventListener("click", function(e) {
     if (result === false) {
         e.preventDefault();
     }
-})
+});
 
 /**
  * Shows a confirm popup message when the user signs out
