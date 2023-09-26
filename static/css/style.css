@@ -190,48 +190,67 @@ h2 {
     color: wheat;
 }
 
-/* Book a table (Not logged in) */
+/* Book table and Update table */
 
-#booking-form-container {
+#booking-form-container,
+#update-booking-container {
     color: rgb(250, 177, 19);
 }
 
-#booking-form-container .card {
+
+#booking-form-container .card,
+#update-booking-container .card {
     background-color: rgb(1, 36, 30);
 }
 
-#booking-form-container .card form {
+#booking-form-container .card form,
+#update-booking-container .card form {
     font-size: 24px;
 }
 
 #booking-form-container .card form input,
-#booking-form-container .card form select {
+#booking-form-container .card form select,
+#update-booking-container .card form input,
+#update-booking-container .card form select {
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-#booking-form-container form button {
+#booking-form-container .card form button,
+#update-booking-container .card form button {
     background-color: rgb(250, 177, 19);
     border: 2px solid rgb(1, 36, 30);
     font-size: 20px;
 }
 
-#booking-form-container form button:hover {
+#booking-form-container .card form button:hover,
+#update-booking-container .card form button:hover {
     background-color: rgb(1, 36, 30);
     border: 2px solid rgb(250, 177, 19);
     color: rgb(250, 177, 19);
 }
 
-/* Book a table (Logged in) */
+/* Bookings list */
 
-#book-another-table-container p a,
-#has-booking-container .card-body p a {
+#book-another-table-container p a {
     color: rgb(0 182 255);
 }
 
 #has-booking-container .card {
     background-color: rgb(1, 36, 30);
     font-size: 24px;
+}
+
+#has-booking-container .card-body a {
+    background-color: rgb(250, 177, 19);
+    border: 2px solid rgb(1, 36, 30);
+    font-size: 20px;
+}
+
+#has-booking-container .card-body a:hover {
+    background-color: rgb(1, 36, 30);
+    border: 2px solid rgb(250, 177, 19);
+    color: rgb(250, 177, 19);
 }
 
 /* Media queries */
@@ -297,7 +316,8 @@ h2 {
         width: 90%;
     }
 
-    #has-booking-container .card {
+    #has-booking-container .card,
+    #has-booking-container .card-body a {
         font-size: 20px;
     }
 
@@ -329,7 +349,8 @@ h2 {
         font-size: 24px;
     }
 
-    #has-booking-container .card {
+    #has-booking-container .card,
+    #has-booking-container .card-body a {
         font-size: 18px;
     }
 
@@ -355,7 +376,8 @@ h2 {
         font-size: 18px;
     }
 
-    #has-booking-container .card {
+    #has-booking-container .card,
+    #has-booking-container .card-body a {
         font-size: 15px;
     }
 
@@ -373,11 +395,13 @@ h2 {
         font-size: 15px;
     }
 
-    #booking-form-container .card-body form label {
+    #booking-form-container .card form label,
+    #update-booking-container .card form label {
         font-size: 20px;
     }
 
-    #has-booking-container .card {
+    #has-booking-container .card,
+    #has-booking-container .card-body a {
         font-size: 13px;
     }
 
@@ -409,7 +433,9 @@ h2 {
         font-size: 20px;
     }
 
-     #has-booking-container .card {
+    #has-booking-container .card,
+    #has-booking-container .card-body a {
         font-size: 11px;
     }
+
 }

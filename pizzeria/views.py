@@ -163,15 +163,12 @@ class FillTableForm(CreateView):
         )
 
 
-def update_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
-    if request.method == 'POST':
-        form = BookTableForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('update_booking')
-    form = BookTableForm(instance=booking)
-    context = {
-        'form': form
-    }
-    return render(request, 'update_booking.html', context)
+class UpdateBooking(UpdateView):
+
+    model = Booking
+    form_class = BookTableForm
+    template_name = 'update_booking.html'
+
+    def form_valid(self, form):
+        form.save()
+        return redirect('book_table')

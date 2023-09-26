@@ -18,8 +18,8 @@
                     <p>You have a booking in {{ b.datetime }}</p>
                     <p>You have booked a table for {{ b.number_of_persons }} persons</p>
                     <p>Your table number is {{ b.table_number }}</p>
-                    <p>To update this booking, click <a href="/update_booking/{{ booking.id }}">here</a></p>
-                    <p>To cancel this booking, click <a href="{% url 'book_table' %}">here</a></p>
+                    <a class="btn me-3" href="{% url 'update_booking' b.pk %}">Update</a>
+                    <a class="btn" href="{% url 'book_table' %}" onclick="checker()">Cancel</a>
                     <p>------------------------------------</p>
                 </div>
             </div>

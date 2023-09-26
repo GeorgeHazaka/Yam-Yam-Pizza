@@ -10,6 +10,6 @@ urlpatterns = [
         views.FillTableForm.as_view(),
         name='fill_table_form'
     ),
-    path('update/<booking_id>', views.update_booking, name='update_booking'),
+    path('update/<int:pk>/', views.UpdateBooking.as_view(), name='update_booking'),
     path('<slug:slug>/', views.PizzaDetails.as_view(), name='pizza_details'),
 ]
