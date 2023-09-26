@@ -139,6 +139,11 @@ h2 {
     margin-right: 9px;
 }
 
+#login-container form p #id_remember,
+#login-container form p [for="id_remember"] {
+    display: none;
+}
+
 #login-container form button {
     background-color: rgb(250, 177, 19);
     border: 2px solid rgb(1, 36, 30);
@@ -149,10 +154,6 @@ h2 {
     background-color: rgb(1, 36, 30);
     border: 2px solid rgb(250, 177, 19);
     color: rgb(250, 177, 19);
-}
-
-#login-container form ul li {
-    color: wheat;
 }
 
 /* Sign-up */
@@ -245,6 +246,14 @@ h2 {
         padding-left: 9px;
     }
 
+    #navbar li .nav-link {
+        padding-left: 11px;
+    }
+
+    #navbarSupportedContent ul .nav-link {
+        padding-right: 100%;
+    }
+
 }
 
 /* For screens size from 900px wide and down */
@@ -264,7 +273,7 @@ h2 {
 
 /* For screens size from 780px wide and down */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 782px) {
 
     #home-paragraph {
         font-size: 30px;

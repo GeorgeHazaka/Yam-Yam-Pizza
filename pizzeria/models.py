@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from datetime import timedelta
+from django.core.exceptions import ValidationError
 
 
 class Pizza(models.Model):
@@ -34,11 +36,10 @@ class Booking(models.Model):
     number_of_persons = models.IntegerField(
         choices=AMOUNT_OF_PERSONS, default=1)
     table_number = models.IntegerField(choices=AMOUNT_OF_TABLES)
-    date = models.DateField(null=True)
-    time = models.TimeField(null=True)
+    datetime = models.DateTimeField()
 
     class Meta:
-        ordering = ['date']
+        ordering = ['datetime']
 
     def __str__(self):
         return self.username

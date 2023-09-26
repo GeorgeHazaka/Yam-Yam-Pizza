@@ -1,23 +1,20 @@
 from django import forms
 from .models import Booking
+from datetime import datetime
 
 
 class BookTableForm(forms.ModelForm):
+
     class Meta:
         model = Booking
         fields = ('email', 'number_of_persons',
-                  'table_number', 'date', 'time')
+                  'table_number', 'datetime')
         widgets = {
-            'date': forms.DateInput(
+            'datetime': forms.DateTimeInput(
                 attrs={
-                    'type': 'date',
+                    'type': 'datetime-local',
                     'class': 'form-control',
+                    'min': datetime.now().strftime('%Y-%m-%dT%H:%M'),
                 }
-            ),
-            'time': forms.TimeInput(
-                attrs={
-                    'type': 'time',
-                    'class': 'form-control',
-                }
-            ),
+            )
         }

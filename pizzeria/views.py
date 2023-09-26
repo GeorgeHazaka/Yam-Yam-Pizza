@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.core.exceptions import ValidationError
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Pizza, Booking
 from .forms import BookTableForm
@@ -65,25 +66,29 @@ class BookTable(LoginRequiredMixin, CreateView):
     def post(self, request, *args, **kwargs):
 
         book_table_form = BookTableForm(data=request.POST)
+
         if request.method == "POST":
-            table_number = request.POST['table_number']
-            date = book_table_form.instance.date
-            time = book_table_form.instance.time
-            print(date)
-            print(time)
-            if Booking.objects.filter(table_number=table_number).exists():
-                if Booking.objects.filter(date=date).exists():
-                    if Booking.objects.filter(
-                      time__lte=time - timedelta(minutes=59),
-                      time__gte=time + timedelta(minutes=59)).exists():
-                        messages.error(request, "Table Already Booked")
-                        return render(
-                            request,
-                            'book_table.html',
-                            {
-                                'book_table_form': BookTableForm(),
-                            }
-                        )
+            form = BookTableForm(request.POST)
+
+            if form.is_valid():
+                table_number = request.POST['table_number']
+                datetime = form.cleaned_data['datetime']
+                time_difference = datetime - timedelta(hours=1)
+
+                existing_bookings = Booking.objects.filter(
+                    table_number=table_number,
+                    datetime=time_difference
+                )
+
+                if existing_bookings.exists():
+                    messages.error(request, "Table Already Booked")
+                    return render(
+                        request,
+                        'book_table.html',
+                        {
+                            'book_table_form': BookTableForm(),
+                        }
+                    )
 
         if book_table_form.is_valid():
             book_table_form.instance.username = request.user.username
@@ -118,26 +123,28 @@ class FillTableForm(CreateView):
     def post(self, request, *args, **kwargs):
 
         book_table_form = BookTableForm(data=request.POST)
-        if request.method == "POST":
-            table_number = request.POST['table_number']
-            date = book_table_form.instance.date
-            time = book_table_form.instance.time
-            print(date)
-            print(time)
 
-            if Booking.objects.filter(table_number=table_number).exists():
-                if Booking.objects.filter(date=date).exists():
-                    if Booking.objects.filter(
-                      time__lte=time - timedelta(minutes=59),
-                      time__gte=time + timedelta(minutes=59)).exists():
-                        messages.error(request, "Table Already Booked")
-                        return render(
-                            request,
-                            'book_table.html',
-                            {
-                                'book_table_form': BookTableForm(),
-                            }
-                        )
+        if request.method == "POST":
+            form = BookTableForm(request.POST)
+
+            if form.is_valid():
+                table_number = request.POST['table_number']
+                datetime = form.cleaned_data['datetime']
+
+                existing_bookings = Booking.objects.filter(
+                    table_number=table_number,
+                    datetime__range=(datetime - timedelta(minutes=59), datetime + timedelta(minutes=59))
+                )
+
+                if existing_bookings.exists():
+                    messages.error(request, "Sorry, Table is already booked")
+                    return render(
+                        request,
+                        'book_table.html',
+                        {
+                            'book_table_form': BookTableForm(),
+                        }
+                    )
 
         if book_table_form.is_valid():
             book_table_form.instance.username = request.user.username
@@ -154,3 +161,17 @@ class FillTableForm(CreateView):
                 'book_table_form': BookTableForm(),
             },
         )
+
+
+def update_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = BookTableForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('update_booking')
+    form = BookTableForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render(request, 'update_booking.html', context)
