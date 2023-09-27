@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Pizza details -->
 <div class="container">
     <div class="row my-5 align-items-center justify-content-center">
         <div class="col-md-10 col-lg-8 col-xxl-6">
@@ -9,6 +10,10 @@
                 <div class="card-body text-center py-4">
                     <h3 class="mb-3">{{ pizza.name }}</h3>
 
+                    <!-- 
+                        This if statement is to show a standard image
+                        in case there was no image in the database
+                     -->
                     {% if "placeholder" in pizza.featured_image.url %}
                         <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQmk1DR0p1Wi1QMLed3bcooFDFKwxNG9uMHFhoxDfsIPtMXCJFHag-idBCm4G5BRcTFY&usqp=CAU"

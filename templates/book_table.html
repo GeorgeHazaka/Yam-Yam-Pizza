@@ -14,7 +14,7 @@
                 <form method="POST">
                     {{ book_table_form | crispy }}
                     {% csrf_token %}
-                    <button id="button-form" type="submit" name="submit" class="btn mt-3">Submit</button>
+                    <button onclick="submitChecker()" class="btn mt-3 orange-button hover-button" id="button-form" type="submit" name="submit">Submit</button>
                 </form>
                 
             </div>

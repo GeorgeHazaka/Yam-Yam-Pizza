@@ -2,13 +2,14 @@
 
 {% block content %}
 
+<!-- Menu -->
 <div class="text-center">
     <h1 class="mt-5 mb-4 display-3">Pizza Menu</h1>
     <h2>Deliciously Irresistible Pizzas: A Slice of Heaven!</h2>
 </div>
 <div class="container">
     <div class="row my-5">
-
+        <!-- For loop to show a list of all the pizzas -->
         {% for pizza in pizza_list %}
             <div class="col-12 col-sm-8 col-lg-4 col-xl-3 offset-sm-2 offset-lg-0">
                 <div class="card mb-4" id="pizza-card">
@@ -35,6 +36,7 @@
 
     </div>
 
+    <!-- Pagination -->
     {% if is_paginated %}
         <nav aria-label="Page navigation" id="page-nav">
             <ul class="pagination justify-content-center">

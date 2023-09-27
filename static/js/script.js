@@ -1,7 +1,6 @@
 // These variables are assigned to html elements
 const buttonNav = document.getElementById("nav-button");
 const username = document.getElementById("username");
-const buttonForm = document.getElementById("button-form");
 
 let clicked = false;
 
@@ -32,21 +31,21 @@ setTimeout(function() {
 }, 3000);
 
 /**
- * Shows a confirm popup message when the user submits a booking
+ * Shows a confirm popup message when the user submits the booking form
  */
-buttonForm.addEventListener("click", function(e) {
-    let result = confirm('Are you sure you want to book this table?');
-    if (result === false) {
-        e.preventDefault();
+function submitChecker() {
+    let message = confirm('Are you sure you want to book this table?');
+    if (message == false) {
+        event.preventDefault();
     }
-});
+}
 
 /**
  * Shows a confirm popup message when the user signs out
  */
-function checker() {
-    let final = confirm('Are you sure you want to sign out?');
-    if (final == false) {
+function signOutChecker() {
+    let message = confirm('Are you sure you want to sign out?');
+    if (message == false) {
         event.preventDefault();
     }
 }
