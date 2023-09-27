@@ -1,13 +1,14 @@
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Pizza, Booking
 from .forms import BookTableForm
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django import forms
+from django.urls import reverse_lazy
 
 
 class Home(generic.ListView):
@@ -172,3 +173,10 @@ class UpdateBooking(UpdateView):
     def form_valid(self, form):
         form.save()
         return redirect('book_table')
+
+
+class CancelBooking(LoginRequiredMixin, DeleteView):
+
+    model = Booking
+    success_url = reverse_lazy('book_table')
+    template_name = 'cancel_booking.html'
