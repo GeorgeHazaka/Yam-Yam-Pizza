@@ -10,6 +10,11 @@ Users of this application will be able to create an account, login, check the me
 
 ----
 
+## Admin Credentials
+
++ username: admin
++ password: adminstator
+
 ## Design
 
 ----
@@ -152,3 +157,211 @@ To make this application seem like a pizzaeria, these two fonts were used:
   + **Tasks:** after logging in, click on 'Book_a_table' in the navbar, you will see a list of all the bookings. Under every booking there is a 'Remove' button. Click it, and it will take you to a page where you have two buttons. Click the 'Yes, Delete' button.
 + **User Story 011:** as a user I want to sign out.
   + **Tasks:** after logging in, click on 'Sign_out' button in the navbar. A confirmation message will appear, click 'Ok'.
+
+## Testing
+
+----
+
++ I have tested that the site works in different browsers: Firefox, Brave, Chrome, Microsoft Edge.
++ I confirm that all inputs and buttons work properly.
+
+### Manual Testing
+
++ #### Navbar Buttons Testing
+
+    | Feature          | When The Following Is Done | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **YamYam**      | YamYam button is clicked | Directs to Home page | Clicked YamYam button | Directed to Home page |
+    | **Menu**        | Menu button is clicked | Directs to Menu page | Clicked Menu button | Directed to Menu page |
+    | **Book_a_table**   | Book_a_table is clicked before logging in | Directs to Login page | Clicked Book_a_table button | Directed to Login page |
+    | **Book_a_table**   | Book_a_table is clicked after logging in but there are no bookings | Directs to Book-table form page | Clicked Book_a_table button | Directsd to Book-table form page |
+    | **Book_a_table**   | Book_a_table is clicked after logging in and there is at least one booking | Directs to Bookings-submitted page | Clicked Book_a_table button | Directed to Bookings-submitted page |
+    | **Register** | Register button is clicked | Directs to Sign-up page | Clicked YamYam button | Directed to Sign-up page |
+    | **Login** | Login button is clicked | Directs to Login page | Clicked Login button | Directed to Login page |
+    | **Sign_out** | Sign_out button is clicked | Signs user out and redirects to Home page | Clicked Sign_out button | Signed user out and reirected to Home page |
+    | **Username** | Username is clicked when there are no bookings | Directs to Book-table form page | Clicked Username | Directed to Book-table page |
+    | **Username** | Username is clicked when there is at least one booking | Directs to Bookings-submitted page | Clicked Username | Directed to Bookings-submitted page |
+
++ #### Footer Media Testing
+
+    | Feature       | When The Following Is Done | Expect | Action | Result |
+    | ------------- | ------ | ------ | ------ | ------ |
+    | **Facebook**  | Facebook button is clicked | Directs to Facebook page | Clicked Facebook button | Directed to Facebook page |
+    | **Twitter**   | Twitter button is clicked | Directs to Twitter page | Clicked Twitter button | Directed to Twitter page |
+    | **Youtube**   | Youtube button is clicked | Directs to Youtube page | Clicked Youtube button | Directed to Youtube page |
+    | **Instagram**   | Instagram button is clicked | Directs to Instagram page | Clicked Instagram button | Directed to Instagram page |
+
++ #### Forms Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Sign Up**      | All fields are filled and Sign Up button is clicked | Creates account | Clicked Sign Up button | Account created |
+    | **Login**        | All fields are filled and Sign In button is clicked | Logs in | Clicked Sign In button | Logged in |
+    | **Book Table**   | All fields are filled and Submit button is clicked | Books the table | Clicked Submit button | Table booked |
+    | **Update Table** | All fields are filled and Update button is clicked | Updates the table | Clicked Update button | Table updated |
+    | **Remove Table** | Yes, Delete button is clicked | Removes the table | Clicked Yes, Delete button | Table removed |
+
++ #### Book-Table-Form Input Error Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Email**        | Enters anything except for an email | Returns this message "Include @ in email, email missing @" | Entered invalid email | Returned this message: "Include @ in email, email missing @" |
+    | **Table number** | Field remains empty | Returns this message "Choose an alternative in the list" | Field remained empty | Returned this message "Choose an alternative in the list" |
+    | **Datetime**     | Field remains empty | Returns this message "Fill this field" | Field remained empty | Returned this message "Fill this field" |
+
++ #### Book-Table-Form Prevent Duplicate Bookings Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Form Details** | Enters a table number and a datetime that already exists in the database | Returns this message: "Sorry, table is already booked" | Entered a table number and a datetime that already exists in the database | Returned this message: "Sorry, table is already booked" |
+    | **Datetime**     | Enters a table number and a datetime of 59 minutes window of that already exists in the database | Returns this message: "Sorry, table is already booked" | Entered a table number and a datetime of 59 minutes window of that already exists in the database | Returned this message "Sorry, table is already booked" |
+
++ #### Confirmation Testing
+
+    | Feature                      | When The Following Is Done | Expect | Action | Result |
+    | ---------------------------- | ------ | ------ | ------ | ------ |
+    | **Book-Table Submit Button** | Clicks Submit button | Pops up this message: "Are you sure you want to book this table?" | Clicked Submit button | Poped up this message: "Are you sure you want to book this table?" |
+    | **Sign_out Button**          | Clicks Sign_out button | Pops up this message: "Are you sure you want to sign out?" | Clicked Sign_out button | Poped up this message: "Are you sure you want to sign out?" |
+
++ #### Confirmation Messages Testing
+
+    | Feature                      | When The Following Is Done | Expect | Action | Result |
+    | ---------------------------- | ------ | ------ | ------ | ------ |
+    | **Sign Up** | Clicks Sign Up button | Pops up this message: "Successfully signed in as 'username'" | Clicked Sign Up button | Poped up this message: "Successfully signed in as 'username'" |
+    | **Login** | Clicks Login button | Pops up this message: "Successfully signed in as 'username'" | Clicked Login button | Poped up this message: "Successfully signed in as 'username'" |
+    | **Sign Out** | Clicks Sign Out button | Pops up this message: "You have signed out" | Clicked Sign Out button | Poped up this message: "You have signed out" |
+
++ #### Confirmation Pop-up Messages Testing
+
+    | Feature                      | When The Following Is Done | Expect | Action | Result |
+    | ---------------------------- | ------ | ------ | ------ | ------ |
+    | **Book-Table Submit Button** | Clicks Ok on booking submit pop-up message | Books the table | Clicked Ok on booking submit pop-up message | Table is booked |
+    | **Book-Table Submit Button** | Clicks Cancel on booking submit pop-up message | Cancels the booking | Clicked Cancel on booking submit pop-up message | Booking is cancelled |
+    | **Sign_out Button**          | Clicks Ok on Sign_out pop-up message | Signs user out | Clicksd Ok on Sign_out pop-up message | user signed out |
+    | **Sign_out Button**          | Clicks Cancel on Sign_out pop-up message | User remains logged in | Clicksd Cancel on Sign_out pop-up message | user remained logged in |
+
+### Validator Testing
+
++ PYTHON: Passed the code through a [PEP8 linter](https://pep8ci.herokuapp.com/) and confirmed that no errors were found.
+  + admin.py
+    ![PEP8 admin.py](documentation/pep8-admin.png)
+  + admin.py
+    ![PEP8 apps.py](documentation/pep8-apps.png)
+  + admin.py
+    ![PEP8 forms.py](documentation/pep8-forms.png)
+  + admin.py
+    ![PEP8 models.py](documentation/pep8-models.png)
+  + admin.py
+    ![PEP8 pizzeria/urls.py](documentation/pep8-pizzeria-urls.png)
+  + admin.py
+    ![PEP8 views.py](documentation/pep8-views.png)
+  + admin.py
+    ![PEP8 settings.py](documentation/pep8-settings.png)
+  + admin.py
+    ![PEP8 yamyam/urls.py](documentation/pep8-yamyam-urls.png)
+  + admin.py
+    ![PEP8 env.py](documentation/pep8-env.png)
+  + admin.py
+    ![PEP8 manage.py](documentation/pep8-manage.png)
+
++ HTML: Passed the code through a [html validator](https://validator.w3.org/).
+  + base.html
+    + I had to remove the first line "{% load static %}" when validating because it ignored the rest of the errors. So the line numbers are different from what the validator is giving, just add 1 to any line in the errors.
+    + I had some django related errors which my mentor told me to ignore:
+      + Bad value {% static 'css/style.css' %} for attribute href on element link: Illegal character in path segment: { is not allowed. From line 28, column 5; to line 28, column 65
+      + Bad value {% static 'css/style.css' %} for attribute href on element link: Illegal character in path segment: { is not allowed. From line 37, column 13; to line 37, column 78.
+      + Bad value {% url 'menu' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 53, column 25; to line 53, column 68.
+      + Bad value {% url 'book_table' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 56, column 25; to line 56, column 74.
+      + Text not allowed in element ul in this context. From line 58, column 1; to line 58, column 50.
+      + Bad value {% url 'account_logout' %} for attribute action on element form: Illegal character in path segment: { is not allowed. From line 61, column 29; to line 61, column 84.
+      + Text not allowed in element ul in this context. From line 69, column 1; to line 69, column 30.
+      + Bad value {% url 'account_signup' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 71, column 29; to line 71, column 82.
+      + Bad value {% url 'account_login' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 74, column 29; to line 74, column 81.
+      + Text not allowed in element ul in this context. From line 76, column 1; to line 76, column 31.
+      + Bad value {% url 'book_table' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 80, column 17; to line 80, column 101.
+      + Bad value {% static 'js/script.js' %} for attribute src on element script: Illegal character in path segment: { is not allowed. From line 164, column 5; to line 164, column 46.
+
+  + home.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+
+  + menu.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {{ pizza.featured_image.url }} for attribute src on element img: Illegal character in path segment: { is not allowed. From line 27, column 29; to line 27, column 96.
+      + Bad value {% url 'pizza_details' pizza.slug %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 31, column 25; to line 31, column 89.
+      + Text not allowed in element ul in this context. From line 44, column 1; to line 44, column 46.
+      + Bad value ?page={{ page_obj.previous_page_number }} for attribute href on element a: Illegal character in query: { is not allowed. From line 46, column 25; to line 46, column 94.
+      + Text not allowed in element ul in this context. From line 48, column 1; to line 48, column 27.
+      + Text not allowed in element ul in this context. From line 50, column 1; to line 50, column 42.
+      + Bad value ?page={{ page_obj.next_page_number }} for attribute href on element a: Illegal character in query: { is not allowed. From line 52, column 25; to line 52, column 90.
+      + Text not allowed in element ul in this context. From line 54, column 1; to line 54, column 27.
+
+  + pizza_details.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {{ pizza.featured_image.url }} for attribute src on element img: Illegal character in path segment: { is not allowed. From line 25, column 25; to line 25, column 92.
+      + 
+
+  + book_table.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+
+  + booking_submitted.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {% url 'fill_table_form' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 9, column 69; to line 9, column 106.
+      + Bad value {% url 'update_booking' b.pk %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 21, column 21; to line 21, column 106.
+      + Bad value {% url 'cancel_booking' b.pk %} for attribute href on element a: Illegal character in path segment: { is not allowed.From line 22, column 21; to line 22, column 101.
+
+  + update_booking.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+
+  + cancel_booking.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {% url 'book_table' %} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 16, column 21; to line 16, column 92.
+
+  + login.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {{ signup_url }} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 19, column 21; to line 19, column 60.
+
+  + signup.html
+    + I had some django related errors which are:
+      + Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>. From line 1, column 1; to line 1, column 25.
+      + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
+      + Bad value {{ login_url }} for attribute href on element a: Illegal character in path segment: { is not allowed. From line 16, column 21; to line 16, column 59.
+      + Bad value {% url 'account_signup' %} for attribute action on element form: Illegal character in path segment: { is not allowed. From line 19, column 17; to line 19, column 87.
+
++ CSS: Passed the code through a [css validator](https://jigsaw.w3.org/css-validator/validator.html.en) and confirmed that no errors were found.
+  + ![css no-error validation](documentation/css-validation-yamyam.png)
+
++ JAVASCRIPT: Passed the code through a [js validator](https://jshint.com/) and confirmed that no errors were found.
+  + The following Metrics were returned:
+    + There are 4 functions in this file.
+    + Function with the largest signature take 0 arguments, while the median is 0.
+    + Largest function has 5 statements in it, while the median is 3.
+    + The most complex function has a cyclomatic complexity value of 2 while the median is 2.
+  + The following seven Warnings were returned:
+    + 2  'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 3  'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 5	 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 28 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 29 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 37 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + 47 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    + One undefined variable:
+      + 29 bootstrap
+    + Two unused variables
+      + 36 submitChecker
+      + 46 signOutChecker
