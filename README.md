@@ -396,3 +396,43 @@ To make this application seem like a pizzaeria, these two fonts were used:
   at Set.forEach (<anonymous>)
   at protectIntrinsics (lockdown-more.js:44:22)
   at lockdown-more.js:97:5
+
+## Deployment
+
+----
+This project was deployed using Code Institute's mock terminal for Heroku
+
++ Steps for deployment:
+  + Fork or clone this repository
+    + To Fork:
+        1. Log in or sign up to Github.
+        2. Go to repository of this project, [YamYam Pizzeria](https://github.com/GeorgeHazaka/Yam-Yam-Pizza)
+        3. Click the Fork button in the upper right corner
+    + To Clone:
+        1. Log in or sign up to Github.
+        2. Go to repository of this project, [YamYam Pizzeria](https://github.com/GeorgeHazaka/Yam-Yam-Pizza)
+        3. Click on Code button and delect to clone with either HTTPS, SSH or GITHub CLI and copy the link shown.
+        4. Open the terminal in your code editor and change the working directory to the location you want to use for the cloned directory.
+        5. Type this command in the terminal:
+        ```bash
+        git clone { & THE LINK FROM STEP 3 }
+        ```
+        6. Set up a virtual environment, but if you are using Code Institute Template in Gitpod then you can skip this step.
+        7. Install the packages from the requirements.txt file by running the following command in the Terminal:
+
+        ```bash
+        pip3 install -r requirements.txt
+        ```
+
+  + Create a new Heroku app
+  + Set the buildbacks to `python` and `NodeJS` in that order
+  + Link the Heroku app to the repository
+  + Click on **Deploy**
+
+### Content
+
++ The idea of the YamYam Pizzeria was taken from [Portfolio 4: Project Submission](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST_PAGPPF+2021_Q2/courseware/8f9fd8690aad4776a05eaf462b430f46/995834f1924a4086af51870bf92f6516/)
+
+### Media
+
++ All images were taken from open source sites
