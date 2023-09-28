@@ -151,4 +151,4 @@ To make this application seem like a pizzaeria, these two fonts were used:
 + **User Story 010:** as a user I want to cancel a table booking.
   + **Tasks:** after logging in, click on 'Book_a_table' in the navbar, you will see a list of all the bookings. Under every booking there is a 'Remove' button. Click it, and it will take you to a page where you have two buttons. Click the 'Yes, Delete' button.
 + **User Story 011:** as a user I want to sign out.
-  + **Tasks:** after logging in, click on 'Sign_out' button in the navbar. A confirmation message will appear, click 'Yes'.
+  + **Tasks:** after logging in, click on 'Sign_out' button in the navbar. A confirmation message will appear, click 'Ok'.
