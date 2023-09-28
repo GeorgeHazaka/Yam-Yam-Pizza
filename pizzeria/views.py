@@ -146,7 +146,10 @@ class FillTableForm(CreateView):
 
                 existing_bookings = Booking.objects.filter(
                     table_number=table_number,
-                    datetime__range=(datetime - timedelta(minutes=59), datetime + timedelta(minutes=59))
+                    datetime__range=(
+                        datetime - timedelta(minutes=59),
+                        datetime + timedelta(minutes=59)
+                    )
                 )
 
                 if existing_bookings.exists():
