@@ -365,3 +365,34 @@ To make this application seem like a pizzaeria, these two fonts were used:
     + Two unused variables
       + 36 submitChecker
       + 46 signOutChecker
+
++ Accessibility
+  + I confirmed that the colors and fonts chosen are accessible and easy to read by running it through lighthouse in devtools.
+    + ![rating the performance, accessibility, best practices and SEO of the home page](documentation/lighthouse-yamyam.png)
+    + ![rating the performance, accessibility, best practices and SEO of the menu page](documentation/lighthouse-menu.png)
+    + ![rating the performance, accessibility, best practices and SEO of the pizza_details page](documentation/lighthouse-pizza-details.png)
+    + ![rating the performance, accessibility, best practices and SEO of the signup page](documentation/lighthouse-signup-yamyam.png)
+    + ![rating the performance, accessibility, best practices and SEO of the login page](documentation/lighthouse-signin-yamyam.png)
+    + ![rating the performance, accessibility, best practices and SEO of the book_table page](documentation/lighthouse-book-table.png)
+    + ![rating the performance, accessibility, best practices and SEO of the bookings_submitted page](documentation/lighthouse-booking-list.png)
+    + ![rating the performance, accessibility, best practices and SEO of the update_booking page](documentation/lighthouse-update-booking.png)
+    + ![rating the performance, accessibility, best practices and SEO of the cancel_booking page](documentation/lighthouse-cancel-booking.png)
+
+### Unfixed Bugs
+
++ lockdown-run.js:17 Lockdown failed: TypeError: At intrinsics.Object.groupBy expected boolean not function
+  at isAllowedPropertyValue (lockdown-install.js:1:53384)
+  at isAllowedProperty (lockdown-install.js:1:53807)
+  at visitProperties (lockdown-install.js:1:55095)
+  at isAllowedPropertyValue (lockdown-install.js:1:53041)
+  at isAllowedProperty (lockdown-install.js:1:53807)
+  at visitProperties (lockdown-install.js:1:55095)
+  at lockdown-install.js:1:55523
+  at repairIntrinsics (lockdown-install.js:1:144597)
+  at lockdown-install.js:1:145462
+  at lockdown-run.js:4:3
++ lockdown-more.js:99 Protecting intrinsics failed: ReferenceError: harden is not defined
+  at lockdown-more.js:69:13
+  at Set.forEach (<anonymous>)
+  at protectIntrinsics (lockdown-more.js:44:22)
+  at lockdown-more.js:97:5
