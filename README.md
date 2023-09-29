@@ -4,7 +4,7 @@ Yam yam pizzeria is a favorite local pizza place. We make delicious pizzas with 
 
 Users of this application will be able to create an account, login, check the menu and also book a table with the desired amount of persons in the suitable date and time.
 
-![SEveral screen sizes devices showing how the website looks in each of them](documentation/)
+![SEveral screen sizes devices showing how the website looks in each of them](documentation/responsive-yamyam.png)
 
 ## Table of Contents
 
