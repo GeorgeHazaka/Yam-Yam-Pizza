@@ -378,20 +378,20 @@ To make this application seem like a pizzaeria, these two fonts were used:
 ### Unfixed Bugs
 
 + lockdown-run.js:17 Lockdown failed: TypeError: At intrinsics.Object.groupBy expected boolean not function
-  at isAllowedPropertyValue (lockdown-install.js:1:53384)
-  at isAllowedProperty (lockdown-install.js:1:53807)
-  at visitProperties (lockdown-install.js:1:55095)
-  at isAllowedPropertyValue (lockdown-install.js:1:53041)
-  at isAllowedProperty (lockdown-install.js:1:53807)
-  at visitProperties (lockdown-install.js:1:55095)
+  at isAllowedPropertyValue "lockdown-install.js:1:53384"
+  at isAllowedProperty "lockdown-install.js:1:53807"
+  at visitProperties "lockdown-install.js:1:55095"
+  at isAllowedPropertyValue "lockdown-install.js:1:53041"
+  at isAllowedProperty "lockdown-install.js:1:53807"
+  at visitProperties "lockdown-install.js:1:55095"
   at lockdown-install.js:1:55523
-  at repairIntrinsics (lockdown-install.js:1:144597)
+  at repairIntrinsics "lockdown-install.js:1:144597"
   at lockdown-install.js:1:145462
   at lockdown-run.js:4:3
 + lockdown-more.js:99 Protecting intrinsics failed: ReferenceError: harden is not defined
   at lockdown-more.js:69:13
-  at Set.forEach (<anonymous>)
-  at protectIntrinsics (lockdown-more.js:44:22)
+  at Set.forEach "anonymous"
+  at protectIntrinsics "lockdown-more.js:44:22"
   at lockdown-more.js:97:5
 
 ## Deployment
