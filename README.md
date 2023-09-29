@@ -266,18 +266,18 @@ To make this application seem like a pizzaeria, these two fonts were used:
   + base.html
     + I had to remove the first line "load static" when validating because it ignored the rest of the errors. So the line numbers are different from what the validator is giving, just add 1 to any line in the errors.
     + I had some django related errors which my mentor told me to ignore:
-      + Bad value ```{% static 'css/style.css' %}``` for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 28, column 5; to line 28, column 65
-      + Bad value ```{% static 'css/style.css' %}``` for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 37, column 13; to line 37, column 78.
-      + Bad value ```{% url 'menu' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 53, column 25; to line 53, column 68.
-      + Bad value ```{% url 'book_table' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 56, column 25; to line 56, column 74.
+      + Bad value "static 'css/style.css'" for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 28, column 5; to line 28, column 65
+      + Bad value "static 'css/style.css'" for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 37, column 13; to line 37, column 78.
+      + Bad value  "url 'menu' for" attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 53, column 25; to line 53, column 68.
+      + Bad value "url 'book_table'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 56, column 25; to line 56, column 74.
       + Text not allowed in element ul in this context. From line 58, column 1; to line 58, column 50.
-      + Bad value ```{% url 'account_logout' %}``` for attribute action on element form: Illegal character in path segment: ```{``` is not allowed. From line 61, column 29; to line 61, column 84.
+      + Bad value "url 'account_logout'" for attribute action on element form: Illegal character in path segment: ```{``` is not allowed. From line 61, column 29; to line 61, column 84.
       + Text not allowed in element ul in this context. From line 69, column 1; to line 69, column 30.
-      + Bad value ```{% url 'account_signup' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 71, column 29; to line 71, column 82.
-      + Bad value ```{% url 'account_login' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 74, column 29; to line 74, column 81.
+      + Bad value "'account_signup'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 71, column 29; to line 71, column 82.
+      + Bad value "url 'account_login'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 74, column 29; to line 74, column 81.
       + Text not allowed in element ul in this context. From line 76, column 1; to line 76, column 31.
-      + Bad value ```{% url 'book_table' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 80, column 17; to line 80, column 101.
-      + Bad value ```{% static 'js/script.js' %}``` for attribute src on element script: Illegal character in path segment: ```{``` is not allowed. From line 164, column 5; to line 164, column 46.
+      + Bad value "url 'book_table'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 80, column 17; to line 80, column 101.
+      + Bad value "static 'js/script.js'" for attribute src on element script: Illegal character in path segment: ```{``` is not allowed. From line 164, column 5; to line 164, column 46.
 
   + home.html
     + I had some django related errors which are:
@@ -288,20 +288,20 @@ To make this application seem like a pizzaeria, these two fonts were used:
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{{ pizza.featured_image.url }}``` for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 27, column 29; to line 27, column 96.
-      + Bad value ```{% url 'pizza_details' pizza.slug %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 31, column 25; to line 31, column 89.
+      + Bad value "pizza.featured_image.url" for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 27, column 29; to line 27, column 96.
+      + Bad value "url 'pizza_details' pizza.slug" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 31, column 25; to line 31, column 89.
       + Text not allowed in element ul in this context. From line 44, column 1; to line 44, column 46.
-      + Bad value ```?page={{ page_obj.previous_page_number }}``` for attribute href on element a: Illegal character in query: ```{``` is not allowed. From line 46, column 25; to line 46, column 94.
+      + Bad value "page_obj.previous_page_number" for attribute href on element a: Illegal character in query: ```{``` is not allowed. From line 46, column 25; to line 46, column 94.
       + Text not allowed in element ul in this context. From line 48, column 1; to line 48, column 27.
       + Text not allowed in element ul in this context. From line 50, column 1; to line 50, column 42.
-      + Bad value ```?page={{ page_obj.next_page_number }}``` for attribute href on element a: Illegal character in query: ```{``` is not allowed. From line 52, column 25; to line 52, column 90.
+      + Bad value "page_obj.next_page_number" for attribute href on element a: Illegal character in query: ```{``` is not allowed. From line 52, column 25; to line 52, column 90.
       + Text not allowed in element ul in this context. From line 54, column 1; to line 54, column 27.
 
   + pizza_details.html
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{{ pizza.featured_image.url }}``` for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 25, column 25; to line 25, column 92.
+      + Bad value "pizza.featured_image.url" for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 25, column 25; to line 25, column 92.
 
   + book_table.html
     + I had some django related errors which are:
@@ -312,9 +312,9 @@ To make this application seem like a pizzaeria, these two fonts were used:
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{% url 'fill_table_form' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 9, column 69; to line 9, column 106.
-      + Bad value ```{% url 'update_booking' b.pk %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 21, column 21; to line 21, column 106.
-      + Bad value ```{% url 'cancel_booking' b.pk %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed.From line 22, column 21; to line 22, column 101.
+      + Bad value "url 'fill_table_form'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 9, column 69; to line 9, column 106.
+      + Bad value |url 'update_booking' b.pk" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 21, column 21; to line 21, column 106.
+      + Bad value "url 'cancel_booking' b.pk" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed.From line 22, column 21; to line 22, column 101.
 
   + update_booking.html
     + I had some django related errors which are:
@@ -325,20 +325,20 @@ To make this application seem like a pizzaeria, these two fonts were used:
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{% url 'book_table' %}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 92.
+      + Bad value "url 'book_table'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 92.
 
   + login.html
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{{ signup_url }}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 19, column 21; to line 19, column 60.
+      + Bad value "signup_url" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 19, column 21; to line 19, column 60.
 
   + signup.html
     + I had some django related errors which are:
       + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
-      + Bad value ```{{ login_url }}``` for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 59.
-      + Bad value ```{% url 'account_signup' %}``` for attribute action on element form: Illegal character in path segment: ```{``` is not allowed. From line 19, column 17; to line 19, column 87.
+      + Bad value "login_url" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 59.
+      + Bad value "'account_signup'" for attribute action on element form: Illegal character in path segment: ```{``` is not allowed. From line 19, column 17; to line 19, column 87.
 
 + CSS: Passed the code through a [css validator](https://jigsaw.w3.org/css-validator/validator.html.en) and confirmed that no errors were found.
   + ![css no-error validation](documentation/css-validation-yamyam.png)
