@@ -35,6 +35,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
     '8000-georgehazaka-yam-yam-piz-yun6qkcpv8.us2.codeanyapp.com',
+    '8000-georgehazaka-yam-yam-piz-75ng32rtyt.us2.codeanyapp.com',
     'yam-yam-pizza-ac28b204f537.herokuapp.com',
     'localhost'
 ]
