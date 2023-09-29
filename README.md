@@ -281,12 +281,12 @@ To make this application seem like a pizzaeria, these two fonts were used:
 
   + home.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
 
   + menu.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "pizza.featured_image.url" for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 27, column 29; to line 27, column 96.
       + Bad value "url 'pizza_details' pizza.slug" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 31, column 25; to line 31, column 89.
@@ -299,18 +299,18 @@ To make this application seem like a pizzaeria, these two fonts were used:
 
   + pizza_details.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "pizza.featured_image.url" for attribute src on element img: Illegal character in path segment: ```{``` is not allowed. From line 25, column 25; to line 25, column 92.
 
   + book_table.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
 
   + booking_submitted.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "url 'fill_table_form'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 9, column 69; to line 9, column 106.
       + Bad value |url 'update_booking' b.pk" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 21, column 21; to line 21, column 106.
@@ -318,24 +318,24 @@ To make this application seem like a pizzaeria, these two fonts were used:
 
   + update_booking.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
 
   + cancel_booking.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "url 'book_table'" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 92.
 
   + login.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "signup_url" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 19, column 21; to line 19, column 60.
 
   + signup.html
     + I had some django related errors which are:
-      + Non-space characters found without seeing a doctype first. Expected ```<!DOCTYPE html>```. From line 1, column 1; to line 1, column 25.
+      + Non-space characters found without seeing a doctype first. Expected "!DOCTYPE html". From line 1, column 1; to line 1, column 25.
       + Element head is missing a required instance of child element title. From line 1, column 1; to line 1, column 25.
       + Bad value "login_url" for attribute href on element a: Illegal character in path segment: ```{``` is not allowed. From line 16, column 21; to line 16, column 59.
       + Bad value "'account_signup'" for attribute action on element form: Illegal character in path segment: ```{``` is not allowed. From line 19, column 17; to line 19, column 87.
@@ -422,7 +422,6 @@ This project was deployed using Code Institute's mock terminal for Heroku
         ```
 
   + Create a new Heroku app
-  + Set the buildbacks to `python` and `NodeJS` in that order
   + Link the Heroku app to the repository
   + Click on **Deploy**
 
