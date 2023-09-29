@@ -264,7 +264,7 @@ To make this application seem like a pizzaeria, these two fonts were used:
 
 + HTML: Passed the code through a [html validator](https://validator.w3.org/).
   + base.html
-    + I had to remove the first line ```"{% load static %}"``` when validating because it ignored the rest of the errors. So the line numbers are different from what the validator is giving, just add 1 to any line in the errors.
+    + I had to remove the first line "load static" when validating because it ignored the rest of the errors. So the line numbers are different from what the validator is giving, just add 1 to any line in the errors.
     + I had some django related errors which my mentor told me to ignore:
       + Bad value ```{% static 'css/style.css' %}``` for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 28, column 5; to line 28, column 65
       + Bad value ```{% static 'css/style.css' %}``` for attribute href on element link: Illegal character in path segment: ```{``` is not allowed. From line 37, column 13; to line 37, column 78.
