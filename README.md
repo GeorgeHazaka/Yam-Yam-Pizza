@@ -10,6 +10,26 @@ Users of this application will be able to create an account, login, check the me
 
 ----
 
+- [YamYam Pizzeria](#yamyam-pizzeria)
+  - [Table of Contents](#table-of-contents)
+  - [Admin Credentials](#admin-credentials)
+  - [Design](#design)
+    - [Flow Diagram](#flow-diagram)
+    - [Wirefremes](#wirefremes)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left To Implement](#features-left-to-implement)
+  - [User Experience](#user-experience)
+  - [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+    - [Validator Testing](#validator-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+    - [Content](#content)
+    - [Media](#media)
+
 ## Admin Credentials
 
 + username: admin
@@ -157,7 +177,16 @@ To make this application seem like a pizzaeria, these two fonts were used:
   + **Tasks:** after logging in, click on 'Book_a_table' in the navbar, you will see a list of all the bookings. Under every booking there is a 'Remove' button. Click it, and it will take you to a page where you have two buttons. Click the 'Yes, Delete' button.
 + **User Story 011:** as a user I want to sign out.
   + **Tasks:** after logging in, click on 'Sign_out' button in the navbar. A confirmation message will appear, click 'Ok'.
-
++ **User Story 012:** as a user I want to open the site Facebook page.
+  + **Tasks:** scroll down to the end, and click on the Facebook icon located at the bottom of the page.
++ **User Story 013:** as a user I want to open the site Youtube page.
+  + **Tasks:** scroll down to the end, and click on the Youtube icon located at the bottom of the page.
++ **User Story 014:** as a user I want to open the site Twitter page.
+  + **Tasks:** scroll down to the end, and click on the Twitter icon located at the bottom of the page.
++ **User Story 015:** as a user I want to open the site Instagram page.
+  + **Tasks:** scroll down to the end, and click on the Instagram icon located at the bottom of the page.
++ **User Story 016:** as a user I want to see the navigation bar buttons when I am using med-small screen devices.
+  + **Tasks:** click on the button located in the top right corner in the navbar
 ## Testing
 
 ----
