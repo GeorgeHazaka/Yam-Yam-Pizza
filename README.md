@@ -6,6 +6,8 @@ Users of this application will be able to create an account, login, check the me
 
 ![SEveral screen sizes devices showing how the website looks in each of them](documentation/responsive-yamyam.png)
 
+Here is the link to the site [YamYam Pizzeria](https://yam-yam-pizza-ac28b204f537.herokuapp.com/)
+
 ## Table of Contents
 
 ----
